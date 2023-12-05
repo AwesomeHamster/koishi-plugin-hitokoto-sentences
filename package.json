@@ -1,0 +1,87 @@
+{
+  "name": "koishi-plugin-hitokoto-sentences",
+  "description": "hitokoto sentences",
+  "version": "0.0.1",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "files": [
+    "lib",
+    "data",
+    "README.md",
+    "LICENSE"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "test": "mocha -r esbuild-register -r yml-register --extension .spec.ts ./__tests__",
+    "lint": "eslint src/**/*.ts && yarn prettier --check",
+    "format": "yarn prettier --write",
+    "prettier": "prettier '**/*.{js,ts,json,yml,yaml,md}' '!lib/**/*'"
+  },
+  "author": {
+    "name": "SaarChaffee",
+    "email": "saarchaffee@qq.com",
+    "url": "https://github.com/SaarChaffee"
+  },
+  "homepage": "https://github.com/AwesomeHamster/koishi-plugin-hitokoto-sentences",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AwesomeHamster/koishi-plugin-hitokoto-sentences.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AwesomeHamster/koishi-plugin-hitokoto-sentences/issues"
+  },
+  "keywords": [
+    "bot",
+    "qqbot",
+    "chatbot",
+    "plugin",
+    "koishi",
+    "koishijs",
+    "hitokoto",
+    "chinese"
+  ],
+  "koishi": {
+    "description": {
+      "en": "Sentences for Hitokoto pluing",
+      "zh": "随机一言语料库"
+    },
+    "service": {
+      "required": [],
+      "optional": [],
+      "implements": [
+        "H-sentencies"
+      ]
+    },
+    "locales": [
+      "zh"
+    ]
+  },
+  "prettier": "@hamster-bot/prettier-config",
+  "peerDependencies": {
+    "koishi": "^4.15.7"
+  },
+  "devDependencies": {
+    "@hamster-bot/eslint-config": "*",
+    "@hamster-bot/prettier-config": "^1.0.1",
+    "@hamster-bot/tsconfig": "^0.0.2",
+    "@types/chai": "^4.3.11",
+    "@types/fs-extra": "^11.0.4",
+    "@types/js-yaml": "^4.0.9",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "^20.10.3",
+    "@typescript-eslint/eslint-plugin": "^6.13.2",
+    "@typescript-eslint/parser": "^6.13.2",
+    "chai": "^4.3.10",
+    "esbuild": "^0.19.8",
+    "esbuild-register": "^3.5.0",
+    "eslint": "^8.55.0",
+    "eslint-import-resolver-typescript": "^3.6.1",
+    "fs-extra": "^11.2.0",
+    "js-yaml": "^4.1.0",
+    "mocha": "^10.2.0",
+    "prettier": "^3.1.0",
+    "typescript": "^5.3.2",
+    "yml-register": "^1.1.0"
+  }
+}
