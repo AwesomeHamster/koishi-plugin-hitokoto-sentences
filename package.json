@@ -43,15 +43,8 @@
   ],
   "koishi": {
     "description": {
-      "en": "Sentences for Hitokoto pluing",
+      "en": "Sentences for Hitokoto plugin",
       "zh": "随机一言语料库"
-    },
-    "service": {
-      "required": [],
-      "optional": [],
-      "implements": [
-        "H-sentencies"
-      ]
     },
     "locales": [
       "zh"
