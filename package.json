@@ -5,8 +5,9 @@
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "files": [
+    "dist",
     "lib",
-    "data",
+    "data/*.json",
     "README.md",
     "LICENSE"
   ],
@@ -48,8 +49,7 @@
     },
     "locales": [
       "zh"
-    ],
-    "hidden": true
+    ]
   },
   "prettier": "@hamster-bot/prettier-config",
   "dependencies": {
