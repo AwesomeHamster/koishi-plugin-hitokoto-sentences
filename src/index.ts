@@ -20,7 +20,7 @@ If you haven't installed the \`hitokoto\` plugin, please install it first and th
 
 找不到配置？這是正常的。此插件專為\`hitokoto\`插件的短語庫設計。如果您尚未安裝\`hitokoto\`插件，請先安裝它，然後參考其配置頁面。
 
-冇揾到配置？係正常嘅。呢個插件係為\`hitokoto\`插件嘅短語庫而設計嘅。如果你未裝咗\`hitokoto\`插件，請先裝返佢，再搵返佢嘅配置頁。
+冇揾到配置？係正常嘅。呢個插件係為\`hitokoto\`插件嘅短語庫而設計嘅。如果你仲未装\`hitokoto\`插件，請先裝返佢，再搵返佢嘅配置頁。
 
 無揣著配置？是正常的。這款插件是為\`hitokoto\`插件的詞庫而設計的。若還未裝\`hitokoto\`插件，請先裝好伊，然後參考伊的配置頁。
 
@@ -53,7 +53,7 @@ Se você ainda não instalou o plugin \`hitokoto\`, instale-o primeiro e consult
 Если вы еще не установили плагин \`hitokoto\`, пожалуйста, сначала установите его, а затем обратитесь к его странице конфигурации.
 `
 
-export interface Config {}
+export interface Config { }
 
 export const Config: Schema<Config> = Schema.object({})
 
