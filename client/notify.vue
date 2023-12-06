@@ -29,9 +29,17 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
+import { useConfig } from '@koishijs/client'
 
 const lang = ref('en-US')
+
+onMounted(() => {
+  const config = useConfig()
+  lang.value = config.value.locale || 'en-US'
+  if (lang.value in languages) return
+  lang.value = 'en-US'
+})
 
 const languages: Record<string, [string, string]> = {
   'en-US': ['English (US)', 'Language'],
