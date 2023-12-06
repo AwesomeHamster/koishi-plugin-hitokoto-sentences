@@ -29,7 +29,7 @@ jobs:
         PACKAGE_NAME="koishi-plugin-hitokoto-sentences"
         TAG=${{ steps.get_tag.outputs.tag }}
         VERSIONS=$(npm show $PACKAGE_NAME versions)
-        if echo "$VERSIONS" | grep -q "$TAG"; then
+        if echo "$VERSIONS" | grep -q "${TAG#v}"; then
           echo "Version $TAG of $PACKAGE_NAME already exists, exiting."
           echo "result=exists" >> $GITHUB_OUTPUT
         else
