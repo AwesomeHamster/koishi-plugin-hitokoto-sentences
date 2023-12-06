@@ -63,10 +63,11 @@ jobs:
         yarn add -D koishi
         yarn build
 
+    - name: Set npm token
+      run: |
+          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
+
     - name: Publish to npm
       if: steps.check_version.outputs.result != 'exists'
       run: |
         npm publish
-
-      env:
-        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
