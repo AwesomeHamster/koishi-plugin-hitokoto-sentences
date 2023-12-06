@@ -12,6 +12,10 @@ export const usage = `
 > Some translations are machine translated. You could improve them by sending PR to
 > [this repo](https://github.com/AwesomeHamster/koishi-plugin-hitokoto-sentences).
 
+No configuration found here? That's normal.
+This plugin is designed for the phrases library of the \`hitokoto\` plugin.
+If you haven't installed the \`hitokoto\` plugin, please install it first and then refer to its configuration page.
+
 找不到配置？这是正常的。此插件专为\`hitokoto\`插件的短语库设计。如果您尚未安装\`hitokoto\`插件，请先安装它，然后参考其配置页面。
 
 找不到配置？這是正常的。此插件專為\`hitokoto\`插件的短語庫設計。如果您尚未安裝\`hitokoto\`插件，請先安裝它，然後參考其配置頁面。
