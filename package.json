@@ -12,7 +12,7 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && koishi-console build",
     "test": "mocha -r esbuild-register -r yml-register --extension .spec.ts ./__tests__",
     "lint": "eslint src/**/*.ts && yarn prettier --check",
     "format": "yarn prettier --write",
@@ -52,6 +52,9 @@
     "hidden": true
   },
   "prettier": "@hamster-bot/prettier-config",
+  "dependencies": {
+    "@koishijs/console": "^5.19.5"
+  },
   "peerDependencies": {
     "koishi": "^4.15.7"
   },
@@ -59,6 +62,8 @@
     "@hamster-bot/eslint-config": "*",
     "@hamster-bot/prettier-config": "^1.0.1",
     "@hamster-bot/tsconfig": "^0.0.2",
+    "@koishijs/client": "^5.19.5",
+    "@koishijs/plugin-console": "^5.19.5",
     "@types/chai": "^4.3.11",
     "@types/js-yaml": "^4.0.9",
     "@types/mocha": "^10.0.6",
