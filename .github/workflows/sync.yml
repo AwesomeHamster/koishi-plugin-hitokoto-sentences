@@ -56,10 +56,17 @@ jobs:
         PTAG=${TAG#v} # Remove the first 'v' from TAG
         sed -i "s/\"version\": \".*\"/\"version\": \"$PTAG\"/" package.json
 
+    - name: Build
+      if: steps.check_version.outputs.result != 'exists'
+      run: |
+        yarn
+        yarn add -D koishi
+        yarn build
+
     - name: Publish to npm
       if: steps.check_version.outputs.result != 'exists'
       run: |
-        npm publish --dry-run
+        npm publish
 
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
