@@ -1,4 +1,4 @@
-import { Context, Service } from 'koishi'
+import { Context, Schema, Service } from 'koishi'
 
 export const name = 'sentences'
 
@@ -8,9 +8,13 @@ declare module 'koishi' {
   }
 }
 
+export interface Config { }
+
+export const Config: Schema<Config> = Schema.object({})
+
 export class Sentences extends Service {
   private s: {
-    [key: string]: Sentences[]
+    [key: string]: Sentence[]
   } = {}
 
   constructor(ctx: Context) {
@@ -31,11 +35,11 @@ export class Sentences extends Service {
     }
   }
 
-  getAllByType(type: string): Sentences[] {
+  getAllByType(type: string): Sentence[] {
     return this.s[type]
   }
 
-  getRandomOneByType(type: string): Sentences {
+  getRandomOneByType(type: string): Sentence {
     return this.s[type][Math.floor(Math.random() * this.s[type].length)]
   }
 }
@@ -44,7 +48,7 @@ export function apply(ctx: Context) {
   ctx.plugin(Sentences)
 }
 
-export interface Sentences {
+export interface Sentence {
   id: number
   hitokoto: string
   type: string
