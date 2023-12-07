@@ -19,6 +19,7 @@ jobs:
       - name: Install dependencies
         run: |
           yarn
+          yarn add -D koishi
 
       - name: Lint
         run: |
