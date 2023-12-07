@@ -56,7 +56,12 @@
     },
     "locales": [
       "zh"
-    ]
+    ],
+    "service": {
+      "implements": [
+        "sentences"
+      ]
+    }
   },
   "prettier": "@hamster-bot/prettier-config",
   "dependencies": {
