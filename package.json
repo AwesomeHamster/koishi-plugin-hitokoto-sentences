@@ -17,7 +17,7 @@
     "test": "mocha -r esbuild-register -r yml-register --extension .spec.ts ./__tests__",
     "lint": "eslint src/**/*.ts && yarn prettier --check",
     "format": "yarn prettier --write",
-    "prettier": "prettier '**/*.{js,ts,json,yml,yaml,md}' '!lib/**/*'"
+    "prettier": "prettier '**/*.{js,ts,json,yml,yaml,md}' '!{lib,dist}/**/*'"
   },
   "author": {
     "name": "SaarChaffee",
