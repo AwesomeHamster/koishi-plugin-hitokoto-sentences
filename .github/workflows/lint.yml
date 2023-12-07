@@ -1,4 +1,4 @@
-name: Sync Hitokoto Sentences
+name: Lint
 
 on:
   pull_request:
