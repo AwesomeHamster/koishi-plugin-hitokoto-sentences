@@ -63,7 +63,7 @@
     "@koishijs/console": "^5.19.5"
   },
   "peerDependencies": {
-    "koishi": "^4.15.7"
+    "koishi": "^4.15.0"
   },
   "devDependencies": {
     "@hamster-bot/eslint-config": "*",
