@@ -13,61 +13,61 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-    - name: Get latest tag from sentences-bundle repository
-      id: get_tag
-      run: |
-        TAG=$(git ls-remote --tags https://github.com/hitokoto-osc/sentences-bundle.git | awk '{print $2}' | grep -E '^refs/tags/v[0-9]+\.[0-9]+\.[0-9]+$' | sort -V | tail -n 1 | cut -d '/' -f 3)
-        echo "Latest tag is $TAG"
-        echo "TAG=$TAG" >> $GITHUB_OUTPUT
+      - name: Get latest tag from sentences-bundle repository
+        id: get_tag
+        run: |
+          TAG=$(git ls-remote --tags https://github.com/hitokoto-osc/sentences-bundle.git | awk '{print $2}' | grep -E '^refs/tags/v[0-9]+\.[0-9]+\.[0-9]+$' | sort -V | tail -n 1 | cut -d '/' -f 3)
+          echo "Latest tag is $TAG"
+          echo "TAG=$TAG" >> $GITHUB_OUTPUT
 
-    - name: Check npm package version
-      id: check_version
-      run: |
-        PACKAGE_NAME="koishi-plugin-hitokoto-sentences"
-        TAG=${{ steps.get_tag.outputs.tag }}
-        VERSIONS=$(npm show $PACKAGE_NAME versions)
-        if echo "$VERSIONS" | grep -q "${TAG#v}"; then
-          echo "Version $TAG of $PACKAGE_NAME already exists, exiting."
-          echo "result=exists" >> $GITHUB_OUTPUT
-        else
-          echo "Version $TAG of $PACKAGE_NAME does not exist, proceeding."
-        fi
+      - name: Check npm package version
+        id: check_version
+        run: |
+          PACKAGE_NAME="koishi-plugin-hitokoto-sentences"
+          TAG=${{ steps.get_tag.outputs.tag }}
+          VERSIONS=$(npm show $PACKAGE_NAME versions)
+          if echo "$VERSIONS" | grep -q "${TAG#v}"; then
+            echo "Version $TAG of $PACKAGE_NAME already exists, exiting."
+            echo "result=exists" >> $GITHUB_OUTPUT
+          else
+            echo "Version $TAG of $PACKAGE_NAME does not exist, proceeding."
+          fi
 
-    - name: Clone sentences-bundle repository
-      if: steps.check_version.outputs.result != 'exists'
-      uses: actions/checkout@v4
-      with:
-        repository: hitokoto-osc/sentences-bundle
-        ref: ${{ steps.get_tag.outputs.tag }}
-        path: sentences-bundle
+      - name: Clone sentences-bundle repository
+        if: steps.check_version.outputs.result != 'exists'
+        uses: actions/checkout@v4
+        with:
+          repository: hitokoto-osc/sentences-bundle
+          ref: ${{ steps.get_tag.outputs.tag }}
+          path: sentences-bundle
 
-    - name: Copy JSON files
-      if: steps.check_version.outputs.result != 'exists'
-      run: |
-        cp sentences-bundle/sentences/*.json data/
+      - name: Copy JSON files
+        if: steps.check_version.outputs.result != 'exists'
+        run: |
+          cp sentences-bundle/sentences/*.json data/
 
-    - name: Update package.json version
-      if: steps.check_version.outputs.result != 'exists'
-      run: |
-        TAG=${{ steps.get_tag.outputs.tag }}
-        PTAG=${TAG#v} # Remove the first 'v' from TAG
-        sed -i "s/\"version\": \".*\"/\"version\": \"$PTAG\"/" package.json
+      - name: Update package.json version
+        if: steps.check_version.outputs.result != 'exists'
+        run: |
+          TAG=${{ steps.get_tag.outputs.tag }}
+          PTAG=${TAG#v} # Remove the first 'v' from TAG
+          sed -i "s/\"version\": \".*\"/\"version\": \"$PTAG\"/" package.json
 
-    - name: Build
-      if: steps.check_version.outputs.result != 'exists'
-      run: |
-        yarn
-        yarn add -D koishi
-        yarn build
+      - name: Build
+        if: steps.check_version.outputs.result != 'exists'
+        run: |
+          yarn
+          yarn add -D koishi
+          yarn build
 
-    - name: Set npm token
-      run: |
+      - name: Set npm token
+        run: |
           echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
 
-    - name: Publish to npm
-      if: steps.check_version.outputs.result != 'exists'
-      run: |
-        npm publish
+      - name: Publish to npm
+        if: steps.check_version.outputs.result != 'exists'
+        run: |
+          npm publish
