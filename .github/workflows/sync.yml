@@ -64,6 +64,7 @@ jobs:
           yarn build
 
       - name: Set npm token
+        if: steps.check_version.outputs.result != 'exists'
         run: |
           echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
 
