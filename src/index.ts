@@ -1,7 +1,8 @@
 import { resolve } from 'path'
 
 import { Context, Schema, Service } from 'koishi'
-import type {} from '@koishijs/console'
+
+import type { } from '@koishijs/console'
 
 export const name = 'sentences'
 
@@ -11,9 +12,7 @@ declare module 'koishi' {
   }
 }
 
-export interface Config {}
-
-export const Config: Schema<Config> = Schema.object({})
+export const Config: Schema<any> = Schema.object({})
 
 export class Sentences extends Service {
   private s: {
@@ -38,11 +37,9 @@ export class Sentences extends Service {
     }
   }
 
-  getAllByType(type: string): Sentence[] {
-    return this.s[type]
-  }
-
-  getRandomOneByType(type: string): Sentence {
+  getSentence(params?: SentencesParams) {
+    const types = params?.c && params.c.length ? params.c : Object.keys(this.s)
+    const type = types[Math.floor(Math.random() * types.length)]
     return this.s[type][Math.floor(Math.random() * this.s[type].length)]
   }
 }
@@ -71,4 +68,10 @@ export interface Sentence {
   commit_from: string
   created_at: string
   length: number
+}
+
+export interface SentencesParams {
+  c: string[]
+  min_length: number
+  max_length: number
 }
