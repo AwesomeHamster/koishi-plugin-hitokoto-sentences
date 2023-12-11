@@ -40,7 +40,16 @@ export class Sentences extends Service {
   getSentence(params?: SentencesParams) {
     const types = params?.c && params.c.length ? params.c : Object.keys(this.s)
     const type = types[Math.floor(Math.random() * types.length)]
-    return this.s[type][Math.floor(Math.random() * this.s[type].length)]
+    if (!(params?.min_length && params?.max_length)) {
+      return this.s[type][Math.floor(Math.random() * this.s[type].length)]
+    }
+
+    const sentences = this.s[type].filter((s) => {
+      if (params?.min_length && s.length < params.min_length) return false
+      if (params?.max_length && s.length > params.max_length) return false
+      return true
+    })
+    return sentences[Math.floor(Math.random() * sentences.length)]
   }
 }
 
