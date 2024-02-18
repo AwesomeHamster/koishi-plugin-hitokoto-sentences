@@ -2,7 +2,7 @@ import { resolve } from 'path'
 
 import { Context, Schema, Service } from 'koishi'
 
-import type { } from '@koishijs/console'
+import type {} from '@koishijs/console'
 
 export const name = 'sentences'
 
