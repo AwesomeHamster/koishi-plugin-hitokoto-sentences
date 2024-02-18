@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <h1>Hitokoto Sentences Library</h1>
-
+  <div v-show="show">
     <k-comment>
       <p>
         Some translations are machine translated. You could improve them by sending PR to
@@ -24,15 +22,19 @@
 
     <div class="card">
       <k-markdown :source="notify[lang]" />
+      <el-button @click="jumpToMarket">{{ noteInstalls[lang] }}</el-button>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { inject, ref, onMounted } from 'vue'
 import { useConfig } from '@koishijs/client'
 
 const lang = ref('en-US')
+
+const local: any = inject('manager.settings.local')
+const show = local.value.name === 'koishi-plugin-hitokoto-sentences'
 
 onMounted(() => {
   const config = useConfig()
@@ -40,6 +42,10 @@ onMounted(() => {
   if (lang.value in languages) return
   lang.value = 'en-US'
 })
+
+const jumpToMarket = () => {
+  window.location.replace(window.location.href.replace(/\/plugins\/.*$/, '/market?keyword=hitokoto'))
+}
 
 const languages: Record<string, [string, string]> = {
   'en-US': ['English (US)', 'Language'],
@@ -89,6 +95,22 @@ Se você ainda não instalou o plugin \`hitokoto\`, instale-o primeiro e consult
   'ru-RU': `Конфигурация не найдена? Это нормально.
 Этот плагин предназначен для библиотеки фраз плагина \`hitokoto\`.
 Если вы еще не установили плагин \`hitokoto\`, пожалуйста, сначала установите его, а затем обратитесь к его странице конфигурации.`,
+}
+
+const noteInstalls: Record<string, string> = {
+  'en-US': 'Install hitokoto',
+  'en-GB': 'Install hitokoto',
+  'zh-CN': '安装 hitokoto',
+  'zh-TW': '安裝 hitokoto',
+  'yue-HK': '裝 hitokoto',
+  'min-TW': '裝 hitokoto',
+  'fr-FR': 'Installer hitokoto',
+  'de-DE': 'Installieren Sie hitokoto',
+  'es-ES': 'Instalar hitokoto',
+  'pt-PT': 'Instalar hitokoto',
+  'ja-JP': 'hitokoto をインストール',
+  'kr-KR': 'hitokoto 설치',
+  'ru-RU': 'Установить hitokoto',
 }
 </script>
 
