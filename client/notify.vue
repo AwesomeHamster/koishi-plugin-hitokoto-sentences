@@ -86,7 +86,7 @@ Si aún no ha instalado el complemento \`hitokoto\`, instálelo primero y luego 
   'pt-PT': `Nenhuma configuração encontrada aqui? Isso é normal.
 Este plugin é projetado para a biblioteca de frases do plugin \`hitokoto\`.
 Se você ainda não instalou o plugin \`hitokoto\`, instale-o primeiro e consulte sua página de configuração.`,
-  'ja-JP': `ここに設定が見つかりませんか？ それは普通です。
+  'ja-JP': `設定が見つかりませんか？ それは普通です。
 このプラグインは、\`hitokoto\`プラグインのフレーズライブラリのために設計されています。
 まだ\`hitokoto\`プラグインをインストールしていない場合は、まずそれをインストールしてから、その構成ページを参照してください。`,
   'kr-KR': `여기에서 구성을 찾을 수 없나요? 정상입니다.
