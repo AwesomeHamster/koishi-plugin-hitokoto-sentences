@@ -5,13 +5,14 @@ Welcome to the contributing guide of this project. This guide will help you to c
 ## Table of Contents
 
 <!-- AUTO-GENERATED-CONTENT:START (TOC) -->
+
 - [Development Notes](#development-notes)
 - [What Can I Contribute?](#what-can-i-contribute)
   - [Reporting Issues](#reporting-issues)
   - [Submitting Pull Requests](#submitting-pull-requests)
   - [Improving Documentation](#improving-documentation)
   - [Donating](#donating)
-<!-- AUTO-GENERATED-CONTENT:END -->
+  <!-- AUTO-GENERATED-CONTENT:END -->
 
 ## Development Notes
 

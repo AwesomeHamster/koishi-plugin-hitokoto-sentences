@@ -15,6 +15,7 @@ Local sentence bundle for [hitokoto](https://npmjs.com/package/koishi-plugin-hit
 ## Table of Contents
 
 <!-- AUTO-GENERATED-CONTENT:START (TOC) -->
+
 - [Installation](#installation)
 - [Contributing](#contributing)
 - [License](#license)
