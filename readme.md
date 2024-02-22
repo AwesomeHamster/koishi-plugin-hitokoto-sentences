@@ -24,7 +24,7 @@ yarn add koishi-plugin-hitokoto-sentences
 
 ## Contributing
 
-If you want to contribute to this project, please read the [CONTRIBUTING.md](../../CONTRIBUTING.md) first.
+If you want to contribute to this project, please read the [CONTRIBUTING.md](https://github.com/AwesomeHamster/koishi-plugin-hitokoto-sentences/blob/master/CONTRIBUTING.md) first.
 
 ## License
 
