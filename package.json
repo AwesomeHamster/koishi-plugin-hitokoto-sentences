@@ -17,7 +17,8 @@
     "test": "mocha -r esbuild-register -r yml-register --extension .spec.ts ./__tests__",
     "lint": "eslint src/**/*.ts && yarn prettier --check",
     "format": "yarn prettier --write",
-    "prettier": "prettier '**/*.{js,ts,json,yml,yaml,md}' '!{lib,dist}/**/*'"
+    "prettier": "prettier '**/*.{js,ts,json,yml,yaml,md}' '!{lib,dist}/**/*'",
+    "toc": "md-magic --path '*.md'"
   },
   "author": {
     "name": "SaarChaffee",
@@ -88,6 +89,7 @@
     "eslint": "^8.55.0",
     "eslint-import-resolver-typescript": "^3.6.1",
     "js-yaml": "^4.1.0",
+    "markdown-magic": "^2.6.1",
     "mocha": "^10.2.0",
     "prettier": "^3.1.0",
     "typescript": "^5.3.2",

@@ -1,5 +1,29 @@
 # Contributing
 
+Welcome to the contributing guide of this project. This guide will help you to contribute to this project.
+
+## Table of Contents
+
+<!-- AUTO-GENERATED-CONTENT:START (TOC) -->
+- [Development Notes](#development-notes)
+- [What Can I Contribute?](#what-can-i-contribute)
+  - [Reporting Issues](#reporting-issues)
+  - [Submitting Pull Requests](#submitting-pull-requests)
+  - [Improving Documentation](#improving-documentation)
+  - [Donating](#donating)
+<!-- AUTO-GENERATED-CONTENT:END -->
+
+## Development Notes
+
+Although this project is a valid Koishi Plugin, it is different from other plugins.
+
+The repository of this project only contains the source code for the plugin. The sentence bundle is not included in this repository.
+Instead, we use a [GitHub Actions](https://github.com/AwesomeHamster/koishi-plugin-hitokoto-sentences/blob/master/.github/workflows/sync.yml)
+to sync the sentence bundle from [hitokoto-osc/sentences](https://github.com/hitokoto-osc/sentences).
+Thus, the version in `package.json` file is set to a dummy `0.0.0` version, then it would be updated by the GitHub Actions to the latest version of the sentence bundle.
+
+## What Can I Contribute?
+
 It is always welcome to contribute to this project. You could contribute by:
 
 - [Reporting issues](#reporting-issues)
@@ -7,7 +31,7 @@ It is always welcome to contribute to this project. You could contribute by:
 - [Improving documentation](#improving-documentation)
 - [Donating](#donating)
 
-## Reporting Issues
+### Reporting Issues
 
 If you find any issues, please report them to [GitHub Issues](https://github.com/AwesomeHamster/koishi-plugin-hitokoto-sentences/issues). Please make sure to include the following information:
 
@@ -18,7 +42,7 @@ If you find any issues, please report them to [GitHub Issues](https://github.com
 - The expected behavior.
 - The actual behavior.
 
-## Submitting Pull Requests
+### Submitting Pull Requests
 
 If you want to contribute code to this project, please follow these steps:
 
@@ -29,7 +53,7 @@ If you want to contribute code to this project, please follow these steps:
 - Push your changes to your fork.
 - Create a pull request to the `master` branch of this repository.
 
-## Improving Documentation
+### Improving Documentation
 
 If you want to improve the documentation, please follow these steps:
 
@@ -38,7 +62,7 @@ If you want to improve the documentation, please follow these steps:
 - Commit your changes.
 - Create a pull request to the `master` branch of this repository.
 
-## Donating
+### Donating
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/F1F3Q8DNU)
 

@@ -12,6 +12,14 @@
 
 Local sentence bundle for [hitokoto](https://npmjs.com/package/koishi-plugin-hitokoto) plugin. With this plugin, your hitokoto plugin can get sentences from local file instead of remote API.
 
+## Table of Contents
+
+<!-- AUTO-GENERATED-CONTENT:START (TOC) -->
+- [Installation](#installation)
+- [Contributing](#contributing)
+- [License](#license)
+<!-- AUTO-GENERATED-CONTENT:END -->
+
 ## Installation
 
 You could install this plugin via your Koishi Console.
