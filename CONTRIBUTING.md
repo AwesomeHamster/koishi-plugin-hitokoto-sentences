@@ -42,7 +42,6 @@ If you want to improve the documentation, please follow these steps:
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/F1F3Q8DNU)
 
-
 If you want to donate to this project, please buy me a coffee !
 
 Click the button above to donate via Ko-fi or [Afdian (爱发电 in Chinese)](https://afdian.net/a/ff14_hamster).
