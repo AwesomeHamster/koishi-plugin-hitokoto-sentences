@@ -52,6 +52,9 @@ jobs:
     if: needs.check.outputs.result != 'exists' || github.event_name == 'workflow_dispatch'
 
     steps:
+      - name: Checkout hitokoto-sentences repository
+        uses: actions/checkout@v4
+
       - name: Clone sentences-bundle repository
         uses: actions/checkout@v4
         with:
