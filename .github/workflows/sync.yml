@@ -2,7 +2,9 @@ name: Sync Hitokoto Sentences
 
 on:
   schedule:
-    - cron: '0 0 * * *'
+    # On the first day of every month 00:00 (UTC)
+    # https://crontab.guru/#0_0_1_*_*
+    - cron: '0 0 1 * *'
   workflow_dispatch:
     inputs:
       version:
