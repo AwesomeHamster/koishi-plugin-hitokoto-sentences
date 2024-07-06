@@ -72,7 +72,7 @@
     "koishi": "^4.15.0"
   },
   "devDependencies": {
-    "@hamster-bot/eslint-config": "*",
+    "@hamster-bot/eslint-config": "1.0.8",
     "@hamster-bot/prettier-config": "^1.0.1",
     "@hamster-bot/tsconfig": "^0.0.2",
     "@koishijs/client": "^5.19.5",
@@ -88,6 +88,10 @@
     "esbuild-register": "^3.5.0",
     "eslint": "^8.55.0",
     "eslint-import-resolver-typescript": "^3.6.1",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-mocha": "^10.4.3",
+    "eslint-plugin-n": "^17.9.0",
+    "eslint-plugin-promise": "^6.4.0",
     "js-yaml": "^4.1.0",
     "markdown-magic": "^2.6.1",
     "mocha": "^10.2.0",

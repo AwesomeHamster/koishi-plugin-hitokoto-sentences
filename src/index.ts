@@ -12,6 +12,7 @@ declare module 'koishi' {
   }
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const Config: Schema<any> = Schema.object({})
 
 export class Sentences extends Service {
