@@ -68,6 +68,11 @@ jobs:
           ref: ${{ needs.check.outputs.tag }}
           path: sentences-bundle
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+
       - name: Copy JSON files
         run: |
           cp sentences-bundle/sentences/*.json data/
