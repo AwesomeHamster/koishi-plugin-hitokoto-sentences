@@ -53,6 +53,10 @@ jobs:
     needs: [check]
     if: needs.check.outputs.result != 'exists' || github.event_name == 'workflow_dispatch'
 
+    permissions:
+      id-token: write
+      contents: read
+
     steps:
       - name: Checkout hitokoto-sentences repository
         uses: actions/checkout@v4
@@ -80,10 +84,10 @@ jobs:
           yarn add -D koishi
           yarn build
 
-      - name: Set npm token
+      - name: Update NPM to latest
         run: |
-          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
+          npm install -g npm@latest
 
       - name: Publish to npm
         run: |
-          npm publish
+          npm publish --provenance
